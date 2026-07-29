@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-5&l9g@27q))*wi6)ei^)9iv(1%%%5*kns8zshkg9n%o=jz=4e#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = [
+    ".railway.app",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
      "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
